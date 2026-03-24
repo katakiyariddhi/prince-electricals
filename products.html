@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products - Prince Electricals</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 200px;       /* SAME SIZE */
+      object-fit: cover;   /* IMPORTANT */
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container py-5">
+
+  <h2 class="text-center mb-5">Our Products</h2>
+
+  <div class="row g-4">
+
+    <!-- FAN -->
+    <div class="col-lg-4">
+      <div class="product-card">
+        <img src="images/fan.jpg" class="product-img">
+        <h4 class="mt-3">Fans</h4>
+
+        <label><b>Select Type & Brand</b></label>
+        <select class="form-control mt-2" onchange="sendWhatsApp(this)">
+          <option value="">-- Select --</option>
+          <option value="Ceiling Fan - Havells">Ceiling Fan - Havells</option>
+          <option value="Ceiling Fan - Crompton">Ceiling Fan - Crompton</option>
+        </select>
+
+        <a class="btn btn-warning mt-3 buyBtn" href="#">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- WATER PUMP -->
+    <div class="col-lg-4">
+      <div class="product-card">
+        <img src="images/pump.jpeg" class="product-img">
+        <h4 class="mt-3">Water Pump</h4>
+
+        <select class="form-control mt-2" onchange="sendWhatsApp(this)">
+          <option value="">-- Select --</option>
+          <option value="Water Pump - Crompton">Water Pump - Crompton</option>
+          <option value="Water Pump - Kirloskar">Water Pump - Kirloskar</option>
+        </select>
+
+        <a class="btn btn-warning mt-3 buyBtn" href="#">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- LIGHTS -->
+    <div class="col-lg-4">
+      <div class="product-card">
+        <img src="images/leds.png" class="product-img">
+        <h4 class="mt-3">Lights</h4>
+
+        <select class="form-control mt-2" onchange="sendWhatsApp(this)">
+          <option value="">-- Select --</option>
+          <option value="LED Light - Philips">LED Light - Philips</option>
+          <option value="LED Light - Syska">LED Light - Syska</option>
+        </select>
+
+        <a class="btn btn-warning mt-3 buyBtn" href="#">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- WIRES -->
+    <div class="col-lg-4">
+      <div class="product-card">
+        <img src="images/wier.jpg" class="product-img">
+        <h4 class="mt-3">Wires</h4>
+
+        <select class="form-control mt-2" onchange="sendWhatsApp(this)">
+          <option value="">-- Select --</option>
+          <option value="Wire - Polycab">Wire - Polycab</option>
+          <option value="Wire - Finolex">Wire - Finolex</option>
+        </select>
+
+        <a class="btn btn-warning mt-3 buyBtn" href="#">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- SWITCH -->
+    <div class="col-lg-4">
+      <div class="product-card">
+        <img src="images/switch.jpg" class="product-img">
+        <h4 class="mt-3">Switch & Modules</h4>
+
+        <select class="form-control mt-2" onchange="sendWhatsApp(this)">
+          <option value="">-- Select --</option>
+          <option value="Switch - Anchor">Switch - Anchor</option>
+          <option value="Switch - Havells">Switch - Havells</option>
+        </select>
+
+        <a class="btn btn-warning mt-3 buyBtn" href="#">Buy Now</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function sendWhatsApp(select) {
+  let selected = select.value;
+  let card = select.closest(".product-card");
+  let btn = card.querySelector(".buyBtn");
+
+  let message = "I want to buy: " + selected;
+
+  btn.href = "https://wa.me/919227188801?text=" + encodeURIComponent(message);
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
